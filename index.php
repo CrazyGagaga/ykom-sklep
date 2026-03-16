@@ -12,7 +12,7 @@
         <div class="search_bar">
             <form action="" id="search_form">
                 <input type="text" name="search_text" id="search_text">
-                <input type="submit" name="search_submit" id="search_submit">
+                <input type="image" name="search_submit" id="search_submit" src="img\search.png">
             </form>
         </div>
     </header>
