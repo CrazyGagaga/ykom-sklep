@@ -2,9 +2,33 @@
     background-color: #00000F;
 }
 
-header h1 {
-    color: white;
+header {
+    display: flex;
 }
 
+header h1 {
+    color: white;
+    margin: 0px;
+}
+
+#search_bar {
+    align-content: center;
+    background-color: #131324;
+    width: 40%;
+    height: 100%;
+}
+
+#search_form {
+    height: 100%;
+    width: 100%;
+}
+
+#search_text, #search_submit {
+    color: #FFFFFF;
+    height: 100%;
+    background-color: #131324;
+    border: 0px;
+    border-radius: 30px;
+}
 
 /*TP2s(LU.ZAh790ky1dGYP-M0x]-eVU*/
