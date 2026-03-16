@@ -8,6 +8,7 @@
 </head>
 <body>
     <header>
+        <h1>Y-KOM - Twój sklep komputerowy!</h1>
 
     </header>
     <main>
