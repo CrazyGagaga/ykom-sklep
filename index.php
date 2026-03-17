@@ -9,7 +9,17 @@
 <body>
     <header>
         <h1>Y-KOM - Twój sklep komputerowy!</h1>
+        <div id="searchBar">
+            <form action="" id="searchForm">
+                <input type="text" id="SearchText" placeholder="Szukaj...">
+                <button type="submit" id="searchSubmit"> 
+                    <img src="img/search.png"/>
+                </button>
+            </form>
+        </div>
+        <div id="accountDetails">
 
+        </div>
     </header>
     <main>
 

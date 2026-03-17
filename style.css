@@ -1,10 +1,80 @@
+/* zmienne */
+:root {
+    --searchBar_color: #ACADBC;
+    --background_col: #0A090C;
+}
+
 * {
-    background-color: #00000F;
+    background-color: var(--background_col);
+}
+
+header { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    height: 60px;   
+    width: 100%;
+    border-bottom: var(--searchBar_color) 2px solid;
+    align-items: center;
 }
 
 header h1 {
     color: white;
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
+#searchBar {
+    display: flex; 
+    justify-content: center; 
+    width: 50%;
+    margin-bottom: 5px;
+}
+
+#searchForm {
+    display: flex;
+    align-items: center;
+}
+
+#searchSubmit {
+    height: 40px;
+    width: 40px;
+    border: none;              
+    padding: 5px;              
+    cursor: pointer;
+    background-color: var(--searchBar_color);
+    width: 20%;
+    border-radius: 30px;
+    object-fit: contain;
+}
+
+#searchSubmit img {
+    width: 20px;  
+    height: 20px;  
+    background-color: var(--searchBar_color);
+}
+
+#SearchText {
+    background-color: var(--searchBar_color);
+    border: 0;
+    border-radius: 30px;
+    height: 40px;
+    width: 250px;
+    padding: 0 15px;
+    margin-right: 5px;
+    font-size: 16px;
+}
 
 /*TP2s(LU.ZAh790ky1dGYP-M0x]-eVU*/
+
+/* 
+    paleta 1:
+    #0A090C - onyx (czarny jakiś)
+    #F0EDEE - platinum (jakiś biały)
+    #07393C - dark teal (jakiś ciemniejszy niebieski/zielony)
+    #2C666E - stormy teal (jasniejszy teal)
+    #90DDF0 - frosted blue (jasny niebieski fest)
+
+    #ACADBC - Pale Slate (dobry wsm na tło searchBara
+
+*/
