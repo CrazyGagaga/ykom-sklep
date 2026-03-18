@@ -9,10 +9,12 @@
 <body>
     <header>
         <h1>Y-KOM - Twój sklep komputerowy!</h1>
-        <div class="search_bar">
-            <form action="" id="search_form">
-                <input type="text" name="search_text" id="search_text">
-                <input type="image" name="search_submit" id="search_submit" src="img\search.png">
+        <div class="searchBar">
+            <form action="" id="searchForm">
+                <input type="text" name="searchText" id="searchText">
+                <button type="submit" name="searchSubmit" id="searchSubmit"> 
+                    <img src="img/search.png"/>
+                </button>
             </form>
         </div>
     </header>

@@ -11,45 +11,22 @@
 header { 
     display: flex; 
     align-items: center; 
-    justify-content: space-between; 
     height: 60px;   
     width: 100%;
     border-bottom: var(--searchBar_color) 2px solid;
-    align-items: center;
-}
-
-header {
-    display: flex;
 }
 
 header h1 {
     color: white;
-    margin: 0px;
-}
-
-#search_bar {
-    align-content: center;
-    background-color: #131324;
-    width: 40%;
-    height: 100%;
-}
-
-#search_form {
-    height: 100%;
-    width: 100%;
-}
-
-#search_text, #search_submit {
-    color: #FFFFFF;
-    height: 100%;
-    background-color: #131324;
-    border: 0px;
-    border-radius: 30px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    justify-self: left;
 }
 
 #searchBar {
     display: flex; 
     justify-content: center; 
+    justify-self: center;
     width: 50%;
     margin-bottom: 5px;
 }
@@ -66,7 +43,6 @@ header h1 {
     padding: 5px;              
     cursor: pointer;
     background-color: var(--searchBar_color);
-    width: 20%;
     border-radius: 30px;
     object-fit: contain;
 }
@@ -77,7 +53,7 @@ header h1 {
     background-color: var(--searchBar_color);
 }
 
-#SearchText {
+#searchText {
     background-color: var(--searchBar_color);
     border: 0;
     border-radius: 30px;
