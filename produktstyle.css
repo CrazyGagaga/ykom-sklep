@@ -1,3 +1,19 @@
 .karta_produktu {
-    
+    background-color: black;
+    height: 500px;
+    border-radius: 35px;
+    width: 30%;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+
+
+
+    img {
+        height: 200px;
+
+    }
+
 }
+
