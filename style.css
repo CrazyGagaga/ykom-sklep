@@ -213,3 +213,43 @@ header h1 {
     display: none;
   }
 }
+
+/* ============================= */
+/*            FOOTER             */
+/* ============================= */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #acadbc;
+}
+
+footer div {
+  flex: 1;
+  color: white;
+  text-align: center;
+  margin: 0 10px;
+  background-color: transparent;
+}
+
+footer img {
+  background-color: transparent;
+  height: 30px;
+  width: 30px;
+}
+
+footer h3,
+p,
+a {
+  background-color: transparent;
+  color: black;
+  text-decoration: none;
+}
+
+/* ============================= */
+/*             MAIN              */
+/* ============================= */
+
+main {
+  height: 500px;
+}
