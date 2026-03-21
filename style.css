@@ -1,41 +1,198 @@
-/* zmienne */
+/* ============================= */
+/*         ZMIENNE KOLORÓW       */
+/* ============================= */
 :root {
-  --searchBar_color: #acadbc;
-  --background_col: #0a090c;
+  --searchBar-color: #acadbc;
+  --background-col: #0a090c;
   --platinum: #f0edee;
 }
 
+/* ============================= */
+/*         RESET / PODSTAWY      */
+/* ============================= */
 * {
-  background-color: var(--background_col);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--background-col);
+  color: white;
+  font-family: sans-serif;
 }
 
+/* ============================= */
+/*         HEADER                */
+/* ============================= */
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 100%;
+  border-bottom: 2px solid var(--searchBar-color);
+  padding: 0 20px;
+}
+
+header h1 {
+  color: white;
+  margin: 0;
+}
+
+/* ============================= */
+/*         SEARCH BAR            */
+/* ============================= */
+.searchBar {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#searchForm {
+  display: flex;
+  align-items: center;
+}
+
+#searchText {
+  background-color: var(--searchBar-color);
+  border: 0;
+  border-radius: 30px;
+  height: 40px;
+  width: 250px;
+  padding: 0 15px;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+#searchSubmit {
+  height: 40px;
+  width: 40px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  background-color: var(--searchBar-color);
+  border-radius: 30px;
+}
+
+#searchSubmit img {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+}
+
+/* ============================= */
+/*         SIDEBAR / DROPDOWN    */
+/* ============================= */
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: rgb(51, 51, 51);
+  padding: 20px;
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.35s ease,
+    opacity 0.25s ease;
+}
+
+#menu.active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: transparent;
+}
+
+.menu-header h3 {
+  margin: 0;
+  color: white;
+  background-color: transparent;
+}
+
+.menu-header button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.dropdown-content a {
+  display: block;
+  background-color: var(--searchBar-color);
+  color: lightgrey;
+  text-decoration: none;
+  padding: 5px;
+  border-top: 1px solid darkgrey;
+  border-bottom: 1px solid darkgrey;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* ============================= */
+/*         PRZYCISKI MENU        */
+/* ============================= */
+#rollUp,
+#rollDown {
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+#rollUp {
+  background-color: var(--searchBar-color);
+  margin-right: 2px;
+}
+
+#rollDown {
+  background-color: rgb(51, 51, 51);
+  margin-right: 2px;
+}
+
+#rollUp img,
+#rollDown img {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+}
+
+/* ============================= */
+/*         RESPONSYWNOŚĆ         */
+/* ============================= */
 @media screen and (max-width: 768px) {
   header {
-    position: relative;
-    z-index: 1;
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 100%;
-    border-bottom: var(--searchBar_color) 2px solid;
   }
 
   header h1 {
-    color: white;
-    margin-top: 0;
     text-align: center;
   }
 
   .searchBar {
     position: relative;
-    display: flex;
-    justify-self: center;
     margin-bottom: 5px;
-  }
-
-  #searchForm {
-    display: flex;
-    align-items: center;
+    left: 0;
+    transform: none;
   }
 
   #searchSubmit {
@@ -43,180 +200,16 @@
   }
 
   #searchText {
-    background-color: var(--searchBar_color);
-    border: 0;
-    border-radius: 30px;
-    height: 40px;
     width: 310px;
-    font-size: 16px;
-  }
-
-  .dropdown-content {
-    position: absolute;
-    flex-direction: column;
-    pointer-events: none;
-    transform: translateX(-100%);
-    opacity: 0;
-    transition:
-      transform 0.35s ease,
-      opacity 0.25s ease;
-    position: absolute;
-    z-index: 9999;
-    background-color: rgb(51, 51, 51);
-    height: 100vh;
-    width: 50vw;
-  }
-
-  .dropdown-content.active {
-    display: flex;
-    flex-direction: column;
-    pointer-events: all;
-    transform: translateX(0);
-    opacity: 1;
-    background-color: rgb(51, 51, 51);
-  }
-
-  .dropdown-content a {
-    background-color: var(--searchBar_color);
-    color: lightgrey;
-    text-decoration: none;
-    padding: 5px;
-    border-top: darkgrey 1px solid;
-    border-bottom: darkgrey 1px solid;
-  }
-
-  .dropdown-content h3 {
-    color: white;
-    background-color: rgb(51, 51, 51);
   }
 
   #menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
-  #menu.active {
-    transform: translateX(0);
-  }
-
-  #rollUp {
-    background-color: var(--searchBar_color);
-    border-radius: 30px;
-    object-fit: contain;
-    height: 40px;
-    width: 40px;
-    border: none;
-    margin-right: 2px;
-    position: relative;
-  }
-
-  #rollUp img {
-    width: 20px;
-    height: 20px;
-    background-color: var(--searchBar_color);
-  }
-
-  #rollDown {
-    object-fit: contain;
-    height: 40px;
-    width: 40px;
-    border: none;
-    margin-right: 2px;
-    position: relative;
-    background-color: rgb(51, 51, 51);
-  }
-
-  #rollDown img {
-    width: 20px;
-    height: 20px;
-    background-color: rgb(51, 51, 51);
-  }
-
-  .menu-header {
-    background-color: rgb(51, 51, 51);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-
-  .menu-header h3 {
-    margin: 0;
+    width: 50vw;
   }
 }
 
 @media screen and (min-width: 768px) {
-  header {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 60px;
-    width: 100%;
-    border-bottom: var(--searchBar_color) 2px solid;
-  }
-
-  header h1 {
-    color: white;
-    margin-top: 0;
-    margin-bottom: 5px;
-    justify-self: left;
-  }
-
   .navBarRollUp {
     display: none;
   }
-
-  .searchBar {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 5px;
-  }
-
-  #searchForm {
-    display: flex;
-    align-items: center;
-  }
-
-  #searchSubmit {
-    height: 40px;
-    width: 40px;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-    background-color: var(--searchBar_color);
-    border-radius: 30px;
-    object-fit: contain;
-  }
-
-  #searchSubmit img {
-    width: 20px;
-    height: 20px;
-    background-color: var(--searchBar_color);
-  }
-
-  #searchText {
-    background-color: var(--searchBar_color);
-    border: 0;
-    border-radius: 30px;
-    height: 40px;
-    width: 250px;
-    padding: 0 15px;
-    margin-right: 5px;
-    font-size: 16px;
-  }
 }
-/*TP2s(LU.ZAh790ky1dGYP-M0x]-eVU*/
-
-/* 
-    paleta 1:
-    #0A090C - onyx (czarny jakiś)
-    #F0EDEE - platinum (jakiś biały)
-    #07393C - dark teal (jakiś ciemniejszy niebieski/zielony)
-    #2C666E - stormy teal (jasniejszy teal)
-    #90DDF0 - frosted blue (jasny niebieski fest)
-
-    #ACADBC - Pale Slate (dobry wsm na tło searchBara
-
-*/
