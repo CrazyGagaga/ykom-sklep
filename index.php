@@ -41,6 +41,39 @@
     </header>
     <main>
 
+    <div class="kategorie_main">
+        
+    </div>
+
+    <div class="baner_main">
+
+    </div>
+
+    <?php 
+/*
+    $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
+    $q1 = "SELECT * FROM produkt";
+    $q2 = mysqli_query($conn, $q1);
+    $r1 = mysqli_fetch_assoc($q2);
+    
+
+    echo "
+            
+    ";*/
+?>
+
+<div class='karta_produktu'>
+    <img src='img/no_name.png' alt='no_image'>
+    <h3>Komputer YKOM i5-14600KF/RTX4060/32GB RAM/2TB SSD</h3>
+    <p>Kategoria: Komputer</p><br>
+    <p>Opis produktu/specyfikacja Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, ad. Asperiores magnam porro sunt consequatur officiis debitis quia similique deleniti. Aperiam saepe inventore soluta amet itaque eos obcaecati, minus repudiandae.
+    </p>
+    <h4>5299 zł</h4>
+    
+    
+</div>
+
+
     </main>
     <hr>
     <footer>
