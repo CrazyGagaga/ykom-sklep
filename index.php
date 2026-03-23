@@ -44,18 +44,18 @@
     <div class="kategorie_main">
         <ul class="sprzet_komputerowy">
             <p>Sprzęt Komputerowy</p>
-            <li>Komputery Stacjonarne</li>
-            <li>Laptopy</li>
-            <li>Części do komputerów</li>
-            <li>Kable</li>
-            <li>Akcesoria</li>
+            <li><a href="">Komputery Stacjonarne</a></li>
+            <li><a href="">Laptopy</a></li>
+            <li><a href="">Części do komputerów</a></li>
+            <li><a href="">Kable</a></li>
+            <li><a href="">Akcesoria</a></li>
         </ul>
         <ul class="telefony">
             <p>Telefony</p>
-            <li>Smartfony</li>
-            <li>Telefony stacjonarne</li>
-            <li>Akcesoria</li>
-            <li>Części</li>
+            <li><a href="">Smartfony</a></li>
+            <li><a href="">Telefony stacjonarne</a></li>
+            <li><a href="">Akcesoria</a></li>
+            <li><a href="">Części</a></li>
         </ul>
         
     </div>
