@@ -42,6 +42,21 @@
     <main>
 
     <div class="kategorie_main">
+        <ul class="sprzet_komputerowy">
+            <p>Sprzęt Komputerowy</p>
+            <li>Komputery Stacjonarne</li>
+            <li>Laptopy</li>
+            <li>Części do komputerów</li>
+            <li>Kable</li>
+            <li>Akcesoria</li>
+        </ul>
+        <ul class="telefony">
+            <p>Telefony</p>
+            <li>Smartfony</li>
+            <li>Telefony stacjonarne</li>
+            <li>Akcesoria</li>
+            <li>Części</li>
+        </ul>
         
     </div>
 

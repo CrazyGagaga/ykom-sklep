@@ -306,4 +306,31 @@ main {
   background-color: var(--platinum);
 }
 
+/* ============================= */
+/*             KATEGORIE         */
+/* ============================= */
+.kategorie_main {
+  color: white;
+  padding: 10px;
+  display: flex;
+  margin: auto;
+  li {
+  display: none;
+  }
+  p {
+    color: white;
+  }
+}
 
+.sprzet_komputerowy:hover {
+  li {
+    display: flex;
+  }
+
+}
+
+.telefony:hover {
+    li {
+      display: flex;
+    }
+  }
