@@ -72,8 +72,6 @@
     $q1 = mysqli_query($conn, $s1);
     $r1 = mysqli_fetch_assoc($q1);
 
-    print_r($r1['opis_prod']);
-
     
 echo "<div class='karta_produktu'>
     <img src='img/no_name.png' alt='no_image'>
