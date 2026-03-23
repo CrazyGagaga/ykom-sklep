@@ -331,11 +331,11 @@ main {
     margin-bottom: 7%;
   }
   a {
-    color: white;
+    color: var(--platinum);
   }
   a:hover {
-    color: blue;
-    background-color: white;
+    color: black;
+    background-color: var(--platinum);
 
     transition-duration: 0.3s;
   }
@@ -348,11 +348,11 @@ main {
     margin-bottom: 7%;
     }
     a {
-    color: white;
+    color: var(--platinum);
   }
   a:hover {
-    color: blue;
-    background-color: white;;
+    color: black;
+    background-color: var(--platinum);
 
     transition-duration: 0.3s;
   }

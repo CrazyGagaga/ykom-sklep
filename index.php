@@ -65,32 +65,33 @@
     </div>
 
     <?php 
-/*
-    $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
-    $q1 = "SELECT * FROM produkt";
-    $q2 = mysqli_query($conn, $q1);
-    $r1 = mysqli_fetch_assoc($q2);
-    
 
-    echo "
-            
-    ";*/
+    $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
+    $s1 = "SELECT * FROM produkt";
+    
+    $q1 = mysqli_query($conn, $s1);
+    $r1 = mysqli_fetch_assoc($q1);
+
+    print_r($r1['opis_prod']);
+
+    
+echo "<div class='karta_produktu'>
+    <img src='img/no_name.png' alt='no_image'>
+    <h3>" . $r1["nazwa_prod"] . "</h3>
+    <p> " . $r1["opis_prod"] ."
+    </p>
+    <h4>" . $r1["cena_sztuka"] . " zł</h4> 
+</div>"
+
+
+
+    
+    
 ?>
 
-<div class='karta_produktu'>
-    <img src='img/no_name.png' alt='no_image'>
-    <h3>Komputer YKOM i5-14600KF/RTX4060/32GB RAM/2TB SSD</h3>
-    <p>Kategoria: Komputer</p><br>
-    <p>Opis produktu/specyfikacja Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, ad. Asperiores magnam porro sunt consequatur officiis debitis quia similique deleniti. Aperiam saepe inventore soluta amet itaque eos obcaecati, minus repudiandae.
-    </p>
-    <h4>5299 zł</h4>
-    
-    
-</div>
 
 
-    </main>
-    <hr>
+</main>
     <footer>
         <div id="orderSec">
             <h3>Zamówienia</h3>
