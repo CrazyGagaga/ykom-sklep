@@ -42,22 +42,35 @@
     <main>
 
     <div class="kategorie_main">
-        <ul class="sprzet_komputerowy">
+        <ul class="sprzet_komputerowy" id="kat">
             <p>Sprzęt Komputerowy</p>
-            <li><a href="">Komputery Stacjonarne</a></li>
-            <li><a href="">Laptopy</a></li>
-            <li><a href="">Części do komputerów</a></li>
-            <li><a href="">Kable</a></li>
-            <li><a href="">Akcesoria</a></li>
+            <div id="kategoria_dropdown">
+                <li><a href="">Komputery Stacjonarne</a></li>
+                <li><a href="">Laptopy</a></li>
+                <li><a href="">Części do komputerów</a></li>
+                <li><a href="">Kable</a></li>
+                <li><a href="">Akcesoria</a></li>
+            </div>
         </ul>
-        <ul class="telefony">
+        <ul class="telefony" id="kat">
             <p>Telefony</p>
-            <li><a href="">Smartfony</a></li>
-            <li><a href="">Telefony stacjonarne</a></li>
-            <li><a href="">Akcesoria</a></li>
-            <li><a href="">Części</a></li>
+            <div id="kategoria_dropdown">
+                <li><a href="">Smartfony</a></li>
+                <li><a href="">Telefony stacjonarne</a></li>
+                <li><a href="">Akcesoria</a></li>
+                <li><a href="">Części</a></li>
+            </div>
         </ul>
-        
+        <ul class="podzespoly" id="kat">
+            <p>Podzespoły komputerowe</p>
+            <div id="kategoria_dropdown">
+                <li><a href="">Komputery Stacjonarne</a></li>
+                <li><a href="">Laptopy</a></li>
+                <li><a href="">Części do komputerów</a></li>
+                <li><a href="">Kable</a></li>
+                <li><a href="">Akcesoria</a></li>
+            </div>
+        </ul> 
     </div>
 
     <div class="baner_main">

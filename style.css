@@ -178,45 +178,7 @@ header h1 {
   background-color: transparent;
 }
 
-/* ============================= */
-/*         RESPONSYWNOŚĆ         */
-/* ============================= */
-@media screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
 
-  header h1 {
-    text-align: center;
-  }
-
-  .searchBar {
-    position: relative;
-    margin-bottom: 5px;
-    left: 0;
-    transform: none;
-  }
-
-  #searchSubmit {
-    display: none;
-  }
-
-  #searchText {
-    width: 310px;
-  }
-
-  #menu {
-    width: 50vw;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .navBarRollUp {
-    display: none;
-  }
-}
 
 /* ============================= */
 /*            FOOTER             */
@@ -316,36 +278,46 @@ main {
   padding: 1%;
   display: flex;
   margin: auto;
-  li {
-  display: none;
-  }
   p {
     color: white;
   }
 }
 
-.sprzet_komputerowy:hover {
-  li {
-    display: flex;
-    margin-top: 7%;
-    margin-bottom: 7%;
-  }
-  a {
-    color: var(--platinum);
-  }
-  a:hover {
-    color: black;
-    background-color: var(--platinum);
-
-    transition-duration: 0.3s;
-  }
+#kat #kategoria_dropdown {
+  top: 20px;
+  padding: 5px;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
-.telefony:hover {
+#kat {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#kat:hover #kategoria_dropdown {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+#kat {
+    z-index: 9999;
     li {
       display: flex;
     margin-top: 7%;
     margin-bottom: 7%;
+    opacity: 1;
+  pointer-events: all;
     }
     a {
     color: var(--platinum);
@@ -356,4 +328,61 @@ main {
 
     transition-duration: 0.3s;
   }
+}
+
+/* ============================= */
+/*         RESPONSYWNOŚĆ         */
+/* ============================= */
+@media screen and (max-width: 768px) {
+  .kategorie_main {
+    display: none;
   }
+
+  .kategorie_main ul {
+    display: none;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  header h1 {
+    text-align: center;
+  }
+
+  .searchBar {
+    position: relative;
+    margin-bottom: 5px;
+    left: 0;
+    transform: none;
+  }
+
+  #searchSubmit {
+    display: none;
+  }
+
+  #searchText {
+    width: 310px;
+  }
+
+  #menu {
+    width: 50vw;
+  }
+
+  footer {
+    display: block;
+  }
+
+  footer div {
+    border-top: 3px black;
+
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navBarRollUp {
+    display: none;
+  }
+} 
