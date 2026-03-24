@@ -228,8 +228,29 @@ main {
 /*        KARTA PRODUKTU         */
 /* ============================= */
 
+.Produkty_Komp  {
+  background-color: #231f29;
+  margin: 30px;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.Produkty_Komp h3 {
+  margin: 5px;
+  background-color: transparent;
+}
+
+#products {
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  overflow-x: auto;
+}
+
 .karta_produktu {
-    background-color: var(--background-col);
+    background-color: transparent;
     height: auto;
     border-radius: 35px;
     width: 30%;
@@ -240,6 +261,7 @@ main {
     width: 400px;
     img {
         height: 180px;
+        background-color: transparent;
     }
     h3 {
       margin-top: 2%;
@@ -251,6 +273,7 @@ main {
         text-align: right;
         margin-right: 10%;
         margin-top: 2%;
+        background-color: transparent;
     }
 
     p {
@@ -328,6 +351,61 @@ main {
 
     transition-duration: 0.3s;
   }
+}
+/* ============================= */
+/*         produkt.php           */
+/* ============================= */
+
+.produkt {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50%;
+}
+
+.produkt img {
+  margin: 30px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.produkt .info {
+  background-color: #acadbc;
+  margin:20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.info h3, p, .dol, span{
+  background-color: transparent;
+}
+
+.info h3 {
+  font-size: 30px;
+  color: black;
+}
+
+.dol {
+  margin-top: auto;
+  display: flex;
+  justify-content: right;
+  margin: 20px;
+}
+
+.info span {
+  text-align: right;
+  color: black;
+  font-size: 32px;
+}
+
+.dol button {
+  width: 50%;
+  height: 40px;
+  border-radius: 30px;
+  background-color: #108F00;
+  border: none;
 }
 
 /* ============================= */

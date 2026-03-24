@@ -1,16 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Y-KOM</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function toggleMenu() {
-            console.log(document.getElementById("menu").classList.value);
-            document.getElementById("menu").classList.toggle("active");
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -39,9 +33,10 @@
 
         </div>
     </header>
+
     <main>
 
-    <div class="kategorie_main">
+        <div class="kategorie_main">
         <ul class="sprzet_komputerowy" id="kat">
             <p>Sprzęt Komputerowy</p>
             <div id="kategoria_dropdown">
@@ -72,60 +67,30 @@
             </div>
         </ul> 
     </div>
+    <hr>
+        <?php
+$conn = mysqli_connect("localhost", "root", "", "ykom_baza");
 
-    <div class="baner_main">
-    </div>
+$id = $_GET['id'];
 
-    <div  class="Produkty_Komp">
-    <h3>Komputery i Laptopy</h3>
-    <div id="products">
-    <?php
-
-
-    $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
-    $s1 = "SELECT * FROM produkt WHERE id_kategoria=1 AND ilosc_magazyn > 0 LIMIT 5";
+$q = mysqli_query($conn, "SELECT * FROM produkt WHERE id=$id");
+$produkt = mysqli_fetch_assoc($q);
+?>
+    <div class="produkt">
+        <img src="data:image/jpeg;base64,<?= base64_encode($produkt['zdjecie_prod']) ?>" alt="produkt">
     
-    $q1 = mysqli_query($conn, $s1);
-
-    while($r1 = mysqli_fetch_assoc($q1)) {        
-    echo "<a href='produkt.php?id=". $r1['id']. " '><div class='karta_produktu'>";
-
-if(!empty($r1['zdjecie_prod'])) {
-    echo "<img src='data:image/jpeg;base64," . base64_encode($r1['zdjecie_prod']) . "'>";
-} else {
-    echo "Brak zdjęcia";
-}
-
-echo "<h3>" . $r1["nazwa_prod"] . "</h3>
-<p>" . $r1["opis_prod"] . "</p>
-<h4>" . $r1["cena_sztuka"] . " zł</h4> 
-</div></a>";
-    }
+        <div class="info">
+            <h3><?= $produkt['nazwa_prod'] ?></h3>
+            <p><?= $produkt['opis_prod'] ?></p>
+        
+            <span class="cena"><?= $produkt['cena_sztuka'] ?> zł</span><br>
+        <div class="dol">
+            <button>Dodaj do koszyka</button>
+        </div>
+    </div>
+    </div>
+    <?php  
     ?>
-    </div>
-</div>
-
-
-
 </main>
-    <footer>
-        <div id="orderSec">
-            <h3>Zamówienia</h3>
-            <a href="">Dostawa i płatności</a>
-        </div>
-        <div id="salesSec">
-            <h3>Promocje</h3>
-            <a href="">Wyprzedaż</a>
-        </div>
-        <div id="aboutSec">
-            <h3>y-kom</h3>
-            <a href="">O nas!</a>
-        </div>
-        <div id="contactSec">
-            <h3>Kontakt</h3>
-            <img src="img/phone.png"/><p> +48 123 456 789</p>
-        </div>
-    </footer>
-    
 </body>
 </html>
