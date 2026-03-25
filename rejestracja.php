@@ -24,11 +24,12 @@
             <input type="password" name="password"><br><br>
             <label>Powtórz hasło: </label><br>
             <input type="password" name="repeatpassword"><br><br>
-            <button onclick="">Zarejestruj się</button>
+            <button id="rejestracjabutton">Zarejestruj się</button>
         </form><br>
         <?php
         $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
         
+        $FormWypelniony = false;
         $login = mysqli_real_escape_string($conn, $_POST["login"]);
         $email = mysqli_real_escape_string($conn, $_POST["email"]);
         $pass = mysqli_real_escape_string($conn, $_POST["password"]);
@@ -42,11 +43,18 @@ $repeatpassword = mysqli_real_escape_string($conn, $_POST["repeatpassword"]);
         else {
         $q1 = "INSERT INTO `dane_uzyt_zam` (`id`, `imie`, `nazwisko`, `nr_dom`, `ulica`, `miejscowosc`, `kod_poczt`, `nr_tel`, `email`, `login`, `haslo`) VALUES (NULL, '', '', '', '', '', '', '', '$email', '$login', '$pass');";
         $result1 = mysqli_query($conn, $q1);
+        $FormWypelniony = true;
+        }
+
+        if ($FormWypelniony == true) {
+            echo '<p>Wstepna rejestracja zakonczona</p><br>';
+            echo '<a href="rejestracja2.php" id="rejestracjaa">Kontynuuj</a><br><br>';
         }
 ?>
         <p>Posiadasz już konto?
         </p>
         <a href="loguj.php">Zaloguj się</a>
+        <br><br><br>
         </div>
     </main>
 </body>
