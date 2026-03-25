@@ -184,7 +184,6 @@ header h1 {
 /*            FOOTER             */
 /* ============================= */
 footer {
-  position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
@@ -197,7 +196,7 @@ footer div {
   flex: 1;
   color: white;
   text-align: center;
-  margin: 0 10px;
+  margin: 0 10px 0;
   background-color: transparent;
 }
 
@@ -306,6 +305,12 @@ main {
   }
 }
 
+#kat:hover #kategoria_dropdown {
+  opacity: 1;
+  pointer-events: all;
+  display: flex;
+}
+
 #kat #kategoria_dropdown {
   top: 20px;
   padding: 5px;
@@ -313,9 +318,10 @@ main {
   opacity: 0;
   pointer-events: none;
   text-align: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center; 
+  transition: all 0.5s ease;
 }
 
 #kat {
@@ -327,10 +333,6 @@ main {
   align-items: center;
 }
 
-#kat:hover #kategoria_dropdown {
-  opacity: 1;
-  pointer-events: all;
-}
 
 
 #kat {
@@ -456,6 +458,15 @@ main {
   footer div {
     border-top: 3px black;
 
+  }
+
+  .produkt {
+    display: block;
+    margin: auto;
+    width: 90%;
+    img {
+      margin: 0;
+    }
   }
 }
 

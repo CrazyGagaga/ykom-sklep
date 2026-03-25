@@ -85,12 +85,33 @@ $produkt = mysqli_fetch_assoc($q);
         
             <span class="cena"><?= $produkt['cena_sztuka'] ?> zł</span><br>
         <div class="dol">
-            <button>Dodaj do koszyka</button>
+            <form>
+                <button onclick="dodajKosz(<?= $produkt['id'] ?>)">Dodaj do koszyka</button>
+            </form>
         </div>
     </div>
     </div>
     <?php  
     ?>
 </main>
+
+<footer>
+        <div id="orderSec">
+            <h3>Zamówienia</h3>
+            <a href="">Dostawa i płatności</a>
+        </div>
+        <div id="salesSec">
+            <h3>Promocje</h3>
+            <a href="">Wyprzedaż</a>
+        </div>
+        <div id="aboutSec">
+            <h3>y-kom</h3>
+            <a href="">O nas!</a>
+        </div>
+        <div id="contactSec">
+            <h3>Kontakt</h3>
+            <img src="img/phone.png"/><p> +48 123 456 789</p>
+        </div>
+    </footer>
 </body>
 </html>
