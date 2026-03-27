@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Y-KOM</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css\style.css">
     <script>
         function toggleMenu() {
             console.log(document.getElementById("menu").classList.value);
@@ -27,7 +27,7 @@
                     </div>
                     <a href="#">Laptopy i Komputer</a>
                     <a href="#">Smartfony i Smartwatche</a>
-                    <a href="#">Podzespoły Komputerowe</a>
+                    <a href="#">TV i Audio</a>
                 </div>
             </div>
             <form action="" id="searchForm">
@@ -38,7 +38,12 @@
             </form>
         </div>
         <div class="accountDetails">
-
+            <button name="cartButton" id="cartButton" onclick="window.location.href = 'koszyk.php';"> 
+                    <img src="img/shopping-cart.png"/>
+            </button>
+            <button name="accountButton" id="accountButton"> 
+                    <img src="img/user.png"/>
+            </button>
         </div>
     </header>
     <main>
@@ -64,13 +69,13 @@
             </div>
         </ul>
         <ul class="podzespoly" id="kat">
-            <p>Podzespoły komputerowe</p>
+            <p>TV i Audio</p>
             <div id="kategoria_dropdown">
-                <li><a href="">Komputery Stacjonarne</a></li>
-                <li><a href="">Laptopy</a></li>
-                <li><a href="">Części do komputerów</a></li>
-                <li><a href="">Kable</a></li>
-                <li><a href="">Akcesoria</a></li>
+                <li><a href="">Telewizory</a></li>
+                <li><a href="">Soundbary</a></li>
+                <li><a href="">Kino domowe</a></li>
+                <li><a href="">Projektory i ekran</a></li>
+                <li><a href="">Słuchawki</a></li>
             </div>
         </ul> 
     </div>

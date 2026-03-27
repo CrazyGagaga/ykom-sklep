@@ -1,10 +1,13 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css\style.css">
 </head>
 <body>
     <header>
@@ -30,7 +33,12 @@
             </form>
         </div>
         <div class="accountDetails">
-
+            <button name="cartButton" id="cartButton"> 
+                    <img src="img/shopping-cart.png"/>
+            </button>
+            <button name="accountButton" id="accountButton"> 
+                    <img src="img/user.png"/>
+            </button>
         </div>
     </header>
 
@@ -57,13 +65,13 @@
             </div>
         </ul>
         <ul class="podzespoly" id="kat">
-            <p>Podzespoły komputerowe</p>
+            <p>TV i Audio</p>
             <div id="kategoria_dropdown">
-                <li><a href="">Komputery Stacjonarne</a></li>
-                <li><a href="">Laptopy</a></li>
-                <li><a href="">Części do komputerów</a></li>
-                <li><a href="">Kable</a></li>
-                <li><a href="">Akcesoria</a></li>
+                <li><a href="">Telewizory</a></li>
+                <li><a href="">Soundbary</a></li>
+                <li><a href="">Kino domowe</a></li>
+                <li><a href="">Projektory i ekran</a></li>
+                <li><a href="">Słuchawki</a></li>
             </div>
         </ul> 
     </div>
@@ -75,6 +83,7 @@ $id = $_GET['id'];
 
 $q = mysqli_query($conn, "SELECT * FROM produkt WHERE id=$id");
 $produkt = mysqli_fetch_assoc($q);
+$id = $produkt['id'];
 ?>
     <div class="produkt">
         <img src="data:image/jpeg;base64,<?= base64_encode($produkt['zdjecie_prod']) ?>" alt="produkt">
@@ -85,8 +94,9 @@ $produkt = mysqli_fetch_assoc($q);
         
             <span class="cena"><?= $produkt['cena_sztuka'] ?> zł</span><br>
         <div class="dol">
-            <form>
-                <button onclick="dodajKosz(<?= $produkt['id'] ?>)">Dodaj do koszyka</button>
+            <form method="POST" action="dodaj_do_koszyka.php">
+                <input type="hidden" name="id" value="<?php echo $id?>">
+                <button type="submit">Dodaj do koszyka</button>
             </form>
         </div>
     </div>
