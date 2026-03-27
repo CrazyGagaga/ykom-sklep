@@ -69,6 +69,7 @@ main {
         padding-left: 60px;
         padding-right: 60px;
         transition-duration: 0.7s;
+        cursor: pointer;
 
     }
 

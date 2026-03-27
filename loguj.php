@@ -19,8 +19,8 @@
             <label>Login: </label><br>
             <input type="text" name="email"><br><br>
             <label>Hasło: </label><br>
-            <input type="password" name="password">
-            <button type="submit">Zaloguj</button>
+            <input type="password" name="password"><br><br>
+            <button type="submit" id="logowaniebutton">Zaloguj</button>
         </form><br>
         <?php
         $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
@@ -30,6 +30,22 @@
 
         $q1 = 'SELECT dane_uzyt_zam.email, dane_uzyt_zam.haslo FROM dane_uzyt_zam WHERE email LIKE "' . $email . '"';
         $r1 = mysqli_query($conn, $q1);
+        $row = mysqli_fetch_array($r1);
+
+
+         echo $row[0] . $row[1];
+
+         if ($row[0] == "") {
+            echo "Nie znaleziono takiego adresu email";
+         }
+         else if ($password != $row[1]) {
+            echo "Podano bledne haslo!";
+         }
+         else {
+            echo "Zalogowano pomyslnie!";
+         }
+
+
 
         
 ?>
