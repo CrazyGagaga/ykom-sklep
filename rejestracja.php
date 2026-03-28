@@ -27,6 +27,7 @@
             <button id="rejestracjabutton">Zarejestruj się</button>
         </form><br>
         <?php
+        session_start();
         $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
         
         $FormWypelniony = false;
@@ -43,6 +44,8 @@ $repeatpassword = mysqli_real_escape_string($conn, $_POST["repeatpassword"]);
         else {
         $q1 = "INSERT INTO `dane_uzyt_zam` (`id`, `imie`, `nazwisko`, `nr_dom`, `ulica`, `miejscowosc`, `kod_poczt`, `nr_tel`, `email`, `login`, `haslo`) VALUES (NULL, '', '', '', '', '', '', '', '$email', '$login', '$pass');";
         $result1 = mysqli_query($conn, $q1);
+        $id_uz = mysqli_insert_id($conn);
+        $_SESSION['id_uz'] = $id_uz;
         $FormWypelniony = true;
         }
 

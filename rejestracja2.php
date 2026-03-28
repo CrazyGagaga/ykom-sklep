@@ -33,7 +33,10 @@
         </form><br>
 
         <?php 
+        session_start();
         $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
+
+        $id_uz = $_SESSION['id_uz'];
         
         $imie = $_POST['imie'];
         $nazwisko = $_POST['nazwisko'];
@@ -43,8 +46,13 @@
         $kod_pocztowy = $_POST['kod_pocztowy'];
         $nr_tel = $_POST['nr_tel'];
 
+        $q1 = "UPDATE dane_uzyt_zam SET imie='$imie', nazwisko='$nazwisko', ulica='$ulica', nr_dom='$numer_domu', miejscowosc='$miejscowosc', kod_poczt='$kod_pocztowy', nr_tel='$nr_tel' WHERE id='$id_uz'";
 
-        echo $imie . $nazwisko . $ulica . $numer_domu . $miejscowosc . $kod_pocztowy . $nr_tel;
+        mysqli_query($conn, $q1);
+
+
+
+        echo $id_uz . $imie . $nazwisko . $ulica . $numer_domu . $miejscowosc . $kod_pocztowy . $nr_tel;
         
         
         
