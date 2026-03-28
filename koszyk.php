@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +5,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css\style.css">
+    </link>
 </head>
 <body>
-    <header>
+
+<header>
         <h1>Y-KOM</h1>
         <div class="searchBar">
             <div class="navBarRollUp">
@@ -22,7 +21,7 @@ session_start();
                     </div>
                     <a href="#">Laptopy i Komputer</a>
                     <a href="#">Smartfony i Smartwatche</a>
-                    <a href="#">Podzespoły Komputerowe</a>
+                    <a href="#">TV i Audio</a>
                 </div>
             </div>
             <form action="" id="searchForm">
@@ -33,7 +32,7 @@ session_start();
             </form>
         </div>
         <div class="accountDetails">
-            <button name="cartButton" id="cartButton"> 
+            <button name="cartButton" id="cartButton" onclick="window.location.href = 'koszyk.php';"> 
                     <img src="img/shopping-cart.png"/>
             </button>
             <button name="accountButton" id="accountButton"> 
@@ -41,10 +40,9 @@ session_start();
             </button>
         </div>
     </header>
+<main>
 
-    <main>
-
-        <div class="kategorie_main">
+    <div class="kategorie_main">
         <ul class="sprzet_komputerowy" id="kat">
             <p>Sprzęt Komputerowy</p>
             <div id="kategoria_dropdown">
@@ -75,34 +73,43 @@ session_start();
             </div>
         </ul> 
     </div>
-    <hr>
-        <?php
-$conn = mysqli_connect("localhost", "root", "", "ykom_baza");
 
-$id = $_GET['id'];
-
-$q = mysqli_query($conn, "SELECT * FROM produkt WHERE id=$id");
-$produkt = mysqli_fetch_assoc($q);
-$id = $produkt['id'];
+    <div class="baner_main">
+    </div>
+    <?php
+session_start();
 ?>
-    <div class="produkt">
-        <img src="data:image/jpeg;base64,<?= base64_encode($produkt['zdjecie_prod']) ?>" alt="produkt">
-    
-        <div class="info">
-            <h3><?= $produkt['nazwa_prod'] ?></h3>
-            <p><?= $produkt['opis_prod'] ?></p>
-        
-            <span class="cena"><?= $produkt['cena_sztuka'] ?> zł</span><br>
-        <div class="dol">
-            <form method="POST" action="dodaj_do_koszyka.php">
-                <input type="hidden" name="id" value="<?php echo $id?>">
-                <button type="submit">Dodaj do koszyka</button>
-            </form>
-        </div>
-    </div>
-    </div>
-    <?php  
-    ?>
+
+<div class="cartSection">
+<div class="cartItemsSection">
+    <h2>Twój koszyk</h2>
+<?php
+if (empty($_SESSION['koszyk'])) {
+    echo "Koszyk jest pusty";
+} else {
+    $suma = 0;
+    $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
+
+    foreach ($_SESSION['koszyk'] as $id => $produkt) {
+        $q = "SELECT * FROM produkt WHERE id=$id";
+
+        $s = mysqli_query($conn, $q);
+        $f = mysqli_fetch_assoc($s);
+        echo $f['nazwa_prod'] . " - " . $f['cena_sztuka'] . " zł x " . $produkt['ilosc'];
+
+        echo " <a href='usun.php?id=$id'>Usuń</a>";
+        echo "</p>";
+
+        $suma += $f['cena_sztuka'] * $produkt['ilosc'];
+    }
+}
+?>
+</div>
+<div class="cartCheckoutDiv">
+    <h3>Suma: <?php echo $suma?> zł</h3>
+    <button id="checkoutButton">Złóż zamówienie</button>
+</div>
+</div>
 </main>
 
 <footer>
