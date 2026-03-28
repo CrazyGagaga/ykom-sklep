@@ -44,9 +44,6 @@
          else {
             echo "Zalogowano pomyslnie!";
          }
-
-
-
         
 ?>
         <p>Masz problemy z logowaniem?</p>
