@@ -16,7 +16,7 @@
         <div class="logowaniemain">
             <h2>Zaloguj się!</h2><br>
         <form method="POST" action="loguj.php">
-            <label>Login: </label><br>
+            <label>Email: </label><br>
             <input type="text" name="email"><br><br>
             <label>Hasło: </label><br>
             <input type="password" name="password"><br><br>
@@ -32,8 +32,6 @@
         $r1 = mysqli_query($conn, $q1);
         $row = mysqli_fetch_array($r1);
 
-
-         echo $row[0] . $row[1];
 
          if ($row[0] == "") {
             echo "Nie znaleziono takiego adresu email";

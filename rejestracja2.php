@@ -46,14 +46,18 @@
         $kod_pocztowy = $_POST['kod_pocztowy'];
         $nr_tel = $_POST['nr_tel'];
 
-        $q1 = "UPDATE dane_uzyt_zam SET imie='$imie', nazwisko='$nazwisko', ulica='$ulica', nr_domu='$numer_domu', miejscowosc='$miejscowosc', kod_poczt='$kod_pocztowy', nr_tel='$nr_tel' WHERE id='$id_uz'";
+        $q1 = "UPDATE dane_uzyt_zam SET imie='$imie', nazwisko='$nazwisko', ulica='$ulica', nr_dom='$numer_domu', miejscowosc='$miejscowosc', kod_poczt='$kod_pocztowy', nr_tel='$nr_tel' WHERE id='$id_uz'";
 
         mysqli_query($conn, $q1);
         
 
-
-        echo $id_uz . $imie . $nazwisko . $ulica . $numer_domu . $miejscowosc . $kod_pocztowy . $nr_tel;
-        
+        if ($imie =='' || $nazwisko='' || $ulica=='' || $numer_domu='' || $miejscowosc='' || $kod_pocztowy == '' || $nr_tel == '') {
+            echo "Nie podano wszystkich danych!";
+        }
+        else {
+        echo "<h3>Zarejestrowano pomyslnie!</h3><br><br>";
+        echo '<a href="loguj.php" id="rejestracjaa">Zaloguj sie</a><br><br>';
+        }
         
         
         
