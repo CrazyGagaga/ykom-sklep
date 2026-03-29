@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>YKOM -  Twój Sklep Komputerowy!</h1>
+        <a href="index.php"><h1>Y-KOM - Twoj sklep komputerowy!</h1></a>
     </header>
 
 

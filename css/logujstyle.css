@@ -24,6 +24,9 @@ header {
     background-color: var(--background-col);
     text-align: center;
     padding: 3%;
+    a {
+        text-decoration: none;
+    }
 }
 
 main {

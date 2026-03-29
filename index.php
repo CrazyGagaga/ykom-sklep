@@ -16,7 +16,7 @@
 </head>
 <body>
     <header>
-        <h1>Y-KOM</h1>
+        <a href="index.php"><h1>Y-KOM</h1></a>
         <div class="searchBar">
             <div class="navBarRollUp">
                 <button id="rollUp" onclick="toggleMenu()"><img src="img/menu.png"/></button>
@@ -41,7 +41,7 @@
             <button name="cartButton" id="cartButton" onclick="window.location.href='koszyk.php';"> 
                     <img src="img/shopping-cart.png"/>
             </button>
-            <button name="accountButton" id="accountButton"> 
+            <button name="accountButton" id="accountButton" onclick="window.location.href = 'loguj.php';"> 
                     <img src="img/user.png"/>
             </button>
         </div>

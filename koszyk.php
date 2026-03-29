@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\koszykstyle.css">
     </link>
 </head>
 <body>
 
 <header>
-        <h1>Y-KOM</h1>
+        <a href="index.php"><h1>Y-KOM</h1></a>
         <div class="searchBar">
             <div class="navBarRollUp">
                 <button id="rollUp" onclick="toggleMenu()"><img src="img/menu.png"/></button>
@@ -35,7 +35,7 @@
             <button name="cartButton" id="cartButton" onclick="window.location.href = 'koszyk.php';"> 
                     <img src="img/shopping-cart.png"/>
             </button>
-            <button name="accountButton" id="accountButton"> 
+            <button name="accountButton" id="accountButton" onclick="window.location.href = 'loguj.php';"> 
                     <img src="img/user.png"/>
             </button>
         </div>
@@ -81,7 +81,7 @@ session_start();
 ?>
 
 <div class="cartSection">
-<div class="cartItemsSection">
+<div class="koszykItemsSection">
     <h2>Twój koszyk</h2>
 <?php
 if (empty($_SESSION['koszyk'])) {
@@ -105,7 +105,7 @@ if (empty($_SESSION['koszyk'])) {
 }
 ?>
 </div>
-<div class="cartCheckoutDiv">
+<div class="koszykPodsumowanieDiv">
     <h3>Suma: <?php echo $suma?> zł</h3>
     <button id="checkoutButton">Złóż zamówienie</button>
 </div>
