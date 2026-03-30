@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\koszykstyle.css">
+    <link rel="stylesheet" href="css\style.css">
     </link>
     <script>
         function toggleMenu() {
@@ -86,7 +86,7 @@
 session_start();
 ?>
 
-<div class="cartSection">
+<div class="koszykSection">
 <div class="koszykItemsSection">
     <h2>Twój koszyk</h2>
 <?php
