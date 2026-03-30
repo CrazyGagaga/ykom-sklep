@@ -365,6 +365,7 @@ main {
   flex-direction: column;
   align-items: center;
   transition: all 0.5s ease;
+
 }
 
 #kat {
@@ -380,9 +381,13 @@ main {
 #kat {
   z-index: 9999;
   li {
+    width:100%;
+    height: auto;
     display: flex;
-    margin-top: 7%;
-    margin-bottom: 7%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    margin-top: 0;
+    margin-bottom: 0;
     opacity: 1;
     pointer-events: all;
   }
@@ -391,11 +396,12 @@ main {
     display: block;
     width: 100%;
   }
-  a:hover {
-    color: black;
+  li:hover {
     background-color: var(--platinum);
-
     transition-duration: 0.3s;
+    a {
+      color: black;
+    }
   }
 }
 /* ============================= */

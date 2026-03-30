@@ -11,7 +11,7 @@ session_start();
 </head>
 <body>
     <header>
-        <h1>Y-KOM</h1>
+        <a href="index.php"><h1>Y-KOM</h1></a>
         <div class="searchBar">
             <div class="navBarRollUp">
                 <button id="rollUp" onclick="toggleMenu()"><img src="img/menu.png"/></button>
