@@ -75,6 +75,13 @@ header h1:hover {
   padding: 0 15px;
   margin-right: 5px;
   font-size: 16px;
+  transition-duration: 0.5s;
+}
+
+#searchText:hover {
+  background-color: #ffffff;
+  color: black;
+  transition-duration: 0.5s;
 }
 
 #searchSubmit {
@@ -85,6 +92,12 @@ header h1:hover {
   cursor: pointer;
   background-color: var(--searchBar-color);
   border-radius: 30px;
+  transition-duration: 0.5s;
+}
+
+#searchSubmit:hover {
+  background-color: #ffffff;
+  transition-duration: 0.5s;
 }
 
 #searchSubmit img {
@@ -108,11 +121,17 @@ header h1:hover {
   border-radius: 30px;
 }
 
+
 #accountButton img,
 #cartButton img {
   width: 20px;
   height: 20px;
   background-color: transparent;
+}
+
+#accountButton:hover, #cartButton:hover {
+  background-color: #ffffff;
+  transition-duration: 0.5s;
 }
 
 /* ============================= */
@@ -275,6 +294,10 @@ main {
 /* ============================= */
 
 .Produkty_Komp, .Produkty_Czesci {
+  h3 {
+    font-size: 25px;
+    text-align: center;
+  }
   background-color: #231f29;
   margin: 30px;
   border-radius: 20px;

@@ -85,6 +85,7 @@
 
     <div  class="Produkty_Komp">
     <h3>Komputery i Laptopy</h3>
+    <br>
     <div id="products">
     <?php
 
@@ -113,6 +114,7 @@ echo "<h3>" . $r1["nazwa_prod"] . "</h3>
 </div>
     <div class="Produkty_Czesci">
     <h3>Części Komputerowe</h3>
+    <br>
     <div id="products">
     <?php
 
