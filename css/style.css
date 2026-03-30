@@ -41,6 +41,14 @@ header h1 {
   color: white;
   margin: 0;
 }
+header h1:hover {
+  background: linear-gradient(130deg,rgba(212, 68, 202, 1) 0%, rgba(64, 201, 222, 1) 75%, rgba(255, 255, 255, 1) 100%);
+  -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition-duration: 0.2s;
+
+}
 
 /* ============================= */
 /*         SEARCH BAR            */
