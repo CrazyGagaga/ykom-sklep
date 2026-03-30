@@ -201,6 +201,24 @@ header h1 {
 }
 
 /* ============================= */
+/*            BreadCrumbs        */
+/* ============================= */
+
+.breadcrumbs {
+  margin-top: 20px;
+  margin-left: 30px;
+  color: white;
+}
+
+.breadcrumbs p {
+  color: white;
+}
+
+.breadcrumbs a {
+  color: white;
+}
+
+/* ============================= */
 /*            FOOTER             */
 /* ============================= */
 footer {

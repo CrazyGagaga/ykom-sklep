@@ -81,10 +81,13 @@ $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
 
 $id = $_GET['id'];
 
-$q = mysqli_query($conn, "SELECT * FROM produkt WHERE id=$id");
+$q = mysqli_query($conn, "SELECT * FROM produkt INNER JOIN kategorie ON produkt.id_kategoria=kategorie.id WHERE produkt.id=$id");
 $produkt = mysqli_fetch_assoc($q);
 $id = $produkt['id'];
 ?>
+    <div class="breadcrumbs">
+        <p>y-kom\ <a href=""><?= $produkt['nazwa_kat']?></a>\ <?= $produkt["nazwa_prod"] ?></p>
+    </div>
     <div class="produkt">
         <img src="data:image/jpeg;base64,<?= base64_encode($produkt['zdjecie_prod']) ?>" alt="produkt">
     
