@@ -6,6 +6,12 @@
     <title>Podsumowanie zakupow - Y-KOM</title>
     <link rel="stylesheet" href="css\koszykstyle.css">
     </link>
+    <script>
+        function toggleMenu() {
+            console.log(document.getElementById("menu").classList.value);
+            document.getElementById("menu").classList.toggle("active");
+        }
+    </script>
 </head>
 <body>
 
@@ -32,7 +38,7 @@
             </form>
         </div>
         <div class="accountDetails">
-            <button name="cartButton" id="cartButton" onclick="window.location.href = 'koszyk.php';"> 
+            <button name="cartButton" id="cartButton" onclick="window.location.href='koszyk.php';"> 
                     <img src="img/shopping-cart.png"/>
             </button>
             <button name="accountButton" id="accountButton" onclick="window.location.href = 'loguj.php';"> 

@@ -8,6 +8,12 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css\style.css">
+    <script>
+        function toggleMenu() {
+            console.log(document.getElementById("menu").classList.value);
+            document.getElementById("menu").classList.toggle("active");
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -33,10 +39,10 @@ session_start();
             </form>
         </div>
         <div class="accountDetails">
-            <button name="cartButton" id="cartButton"> 
+            <button name="cartButton" id="cartButton" onclick="window.location.href='koszyk.php';"> 
                     <img src="img/shopping-cart.png"/>
             </button>
-            <button name="accountButton" id="accountButton"> 
+            <button name="accountButton" id="accountButton" onclick="window.location.href = 'loguj.php';"> 
                     <img src="img/user.png"/>
             </button>
         </div>
