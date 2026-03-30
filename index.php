@@ -111,7 +111,7 @@ echo "<h3>" . $r1["nazwa_prod"] . "</h3>
     ?>
     </div>
 </div>
-    <div  class="Produkty_Czesci">
+    <div class="Produkty_Czesci">
     <h3>Części Komputerowe</h3>
     <div id="products">
     <?php
