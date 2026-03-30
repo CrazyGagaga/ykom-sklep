@@ -204,9 +204,10 @@ header h1 {
 /*            FOOTER             */
 /* ============================= */
 footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
+  top: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
