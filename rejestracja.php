@@ -29,30 +29,51 @@
         <?php
         session_start();
         $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
-        
-        $FormWypelniony = false;
-        $login = mysqli_real_escape_string($conn, $_POST["login"]);
-        $email = mysqli_real_escape_string($conn, $_POST["email"]);
-        $pass = mysqli_real_escape_string($conn, $_POST["password"]);
-$repeatpassword = mysqli_real_escape_string($conn, $_POST["repeatpassword"]);
-        if ($login == "" || $email == "" || $pass == "" || $repeatpassword == "") {
-            echo "Nie wprowadzono wszystkich danych!";
-        }
-        else if ($repeatpassword != $pass) {
-            echo "Powtórzone hasło jest nieprawidłowe!";
-        }
-        else {
-        $q1 = "INSERT INTO `dane_uzyt_zam` (`id`, `imie`, `nazwisko`, `nr_dom`, `ulica`, `miejscowosc`, `kod_poczt`, `nr_tel`, `email`, `login`, `haslo`) VALUES (NULL, '', '', '', '', '', '', '', '$email', '$login', '$pass');";
-        $result1 = mysqli_query($conn, $q1);
-        $id_uz = mysqli_insert_id($conn);
-        $_SESSION['id_uz'] = $id_uz;
-        $FormWypelniony = true;
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $FormWypelniony = false;
+            $login = mysqli_real_escape_string($conn, $_POST["login"]);
+            $email = mysqli_real_escape_string($conn, $_POST["email"]);
+            $pass = mysqli_real_escape_string($conn, $_POST["password"]);
+            $repeatpassword = mysqli_real_escape_string($conn, $_POST["repeatpassword"]);
+            if ($login == "" || $email == "" || $pass == "" || $repeatpassword == "") {
+                echo "Nie wprowadzono wszystkich danych!";
+            }
+            else if ($repeatpassword != $pass) {
+                echo "Powtórzone hasło jest nieprawidłowe!";
+            }
+            else {
+                $q2 = "SELECT email, login FROM dane_uzyt_zam";
+                $checkRes = mysqli_query($conn, $q2);
+                $emailAlreadyUsed = false;
+                if(isset($checkRes)){
+                    while($r1 = mysqli_fetch_assoc($checkRes)) {
+                        if($r1[1] == $login) {
+                            $emailAlreadyUsed = true;
+                            echo "<p>Login zajęty, może posiadasz już konto, <a href='login.php'>Zaloguj się</a></p>";
+                            break;
+                        }
+                        if($r1[0] == $email) {
+                            $emailAlreadyUsed = true;
+                            echo "<p>Email zajęty, może posiadasz już konto, <a href='login.php'>Zaloguj się</a></p>";
+                            break;
+                        }
+                    }
+                }
+                if(!$emailAlreadyUsed) {
+                    $passHash = sha1($pass);
+                    $q1 = "INSERT INTO `dane_uzyt_zam` (`id`, `imie`, `nazwisko`, `nr_dom`, `ulica`, `miejscowosc`, `kod_poczt`, `nr_tel`, `email`, `login`, `haslo`) VALUES (NULL, '', '', '', '', '', '', '', '$email', '$login', '$passHash');";
+                    $result1 = mysqli_query($conn, $q1);
+                    $id_uz = mysqli_insert_id($conn);
+                    $_SESSION['id_uz'] = $id_uz;
+                    $FormWypelniony = true;
+                }
+                if ($FormWypelniony == true) {
+                    echo '<p>Wstepna rejestracja zakonczona</p><br>';
+                    echo '<a href="rejestracja2.php" id="rejestracjaa">Kontynuuj</a><br><br>';
+                }
+            }
         }
 
-        if ($FormWypelniony == true) {
-            echo '<p>Wstepna rejestracja zakonczona</p><br>';
-            echo '<a href="rejestracja2.php" id="rejestracjaa">Kontynuuj</a><br><br>';
-        }
 ?>
         <p>Posiadasz już konto?
         </p>

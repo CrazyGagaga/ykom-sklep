@@ -90,7 +90,35 @@
 
 
     $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
-    $s1 = "SELECT * FROM produkt WHERE id_kategoria=1 AND ilosc_magazyn > 0 LIMIT 5";
+    $s1 = "SELECT * FROM produkt WHERE id_kategoria=1 OR id_kategoria=2 AND ilosc_magazyn > 0 LIMIT 5";
+    
+    $q1 = mysqli_query($conn, $s1);
+
+    while($r1 = mysqli_fetch_assoc($q1)) {        
+    echo "<a href='produkt.php?id=". $r1['id']. " '><div class='karta_produktu'>";
+
+if(!empty($r1['zdjecie_prod'])) {
+    echo "<img src='data:image/jpeg;base64," . base64_encode($r1['zdjecie_prod']) . "'>";
+} else {
+    echo "Brak zdjęcia";
+}
+
+echo "<h3>" . $r1["nazwa_prod"] . "</h3>
+<p>" . $r1["opis_prod"] . "</p>
+<h4>" . $r1["cena_sztuka"] . " zł</h4> 
+</div></a>";
+    }
+    ?>
+    </div>
+</div>
+    <div  class="Produkty_Czesci">
+    <h3>Części Komputerowe</h3>
+    <div id="products">
+    <?php
+
+
+    $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
+    $s1 = "SELECT * FROM produkt WHERE id_kategoria=3 AND ilosc_magazyn > 0 LIMIT 5";
     
     $q1 = mysqli_query($conn, $s1);
 

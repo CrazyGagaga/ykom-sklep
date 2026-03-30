@@ -1,3 +1,8 @@
+<?php 
+    $email = "";
+    $password = "";
+
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -23,27 +28,33 @@
             <button type="submit" id="logowaniebutton">Zaloguj</button>
         </form><br>
         <?php
-        $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
+    
+            $email = $_POST['email'];
+            $password = $_POST['password'];
 
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $q1 = 'SELECT dane_uzyt_zam.email, dane_uzyt_zam.haslo FROM dane_uzyt_zam WHERE email LIKE "' . $email . '"';
-        $r1 = mysqli_query($conn, $q1);
-        $row = mysqli_fetch_array($r1);
+            $q1 = 'SELECT dane_uzyt_zam.email, dane_uzyt_zam.haslo FROM dane_uzyt_zam WHERE email LIKE "' . $email . '"';
+            $r1 = mysqli_query($conn, $q1);
+            $row = mysqli_fetch_array($r1);
 
 
-         if ($row[0] == "") {
-            echo "Nie znaleziono takiego adresu email";
-         }
-         else if ($password != $row[1]) {
-            echo "Podano bledne haslo!";
-         }
-         else {
-            echo "Zalogowano pomyslnie!";
-         }
+            if(isset($row)) {
+                if ($row[0] == "") {
+                    echo "Nie znaleziono takiego adresu email";
+                }
+                else if (sha1($password) != $row[1]) {
+                    echo "Podano bledne haslo!";
+                }
+                else {
+                    echo "Zalogowano pomyslnie!";
+                }
+            } else {
+                echo "Nie znaleziono takiego adresu email";
+            }
+        }
         
-?>
+        ?>
         <p>Masz problemy z logowaniem?</p>
         <a href="">Zresetuj hasło</a>
         <br><br>

@@ -204,7 +204,7 @@ header h1 {
 /*            FOOTER             */
 /* ============================= */
 footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -247,7 +247,7 @@ main {
 /*        KARTA PRODUKTU         */
 /* ============================= */
 
-.Produkty_Komp {
+.Produkty_Komp, .Produkty_Czesci {
   background-color: #231f29;
   margin: 30px;
   border-radius: 20px;
@@ -255,7 +255,7 @@ main {
   margin-bottom: 50px;
 }
 
-.Produkty_Komp h3 {
+.Produkty_Komp h3, .Produkty_Czesci h3 {
   margin: 5px;
   background-color: transparent;
 }
