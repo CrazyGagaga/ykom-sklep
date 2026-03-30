@@ -1,0 +1,14 @@
+Baza danych y-kom - na czysto: 
+Kategorie:
+INSERT INTO `kategorie` (`id`, `nazwa_kat`, `opis_kat`) VALUES (NULL, 'laptopy', 'laptopy');
+INSERT INTO `kategorie` (`id`, `nazwa_kat`, `opis_kat`) VALUES (NULL, 'czesci_komputerowe', 'czesci komputerowe');
+
+
+Produkty
+INSERT INTO `produkt` (`id`, `nazwa_prod`, `opis_prod`, `id_kategoria`, `cena_sztuka`, `ilosc_magazyn`, `zdjecie_prod`) VALUES (NULL, 'HP OMEN 16 Ryzen 9-8940HX/16GB/1TB RTX5060 144Hz', 'Laptop HP OMEN 16 z mocnym procesorem Ryzen 9, pamiecia RAM DDR5 o pojemnosci 16GB, szybkim dyskiem ssd 1TB oraz karta graficzna RTX 5060.', '2', '4599', '2', blob);
+
+INSERT INTO `produkt` (`id`, `nazwa_prod`, `opis_prod`, `id_kategoria`, `cena_sztuka`, `ilosc_magazyn`, `zdjecie_prod`) VALUES (NULL, 'Lexar 1TB M.2 PCIe Gen4 NVMe NM790', 'Dysk SSD', '3', '599', '4', blob);
+
+INSERT INTO `produkt` (`id`, `nazwa_prod`, `opis_prod`, `id_kategoria`, `cena_sztuka`, `ilosc_magazyn`, `zdjecie_prod`) VALUES (NULL, 'GOODRAM 32GB (2x16GB) 6400MHz CL32 IRDM BLACK V SILVER', 'RAM DDR5', '3', '1500', '1', blob);
+
+INSERT INTO `produkt` (`id`, `nazwa_prod`, `opis_prod`, `id_kategoria`, `cena_sztuka`, `ilosc_magazyn`, `zdjecie_prod`) VALUES (NULL, 'Intel Core Ultra 7 270K Plus', 'Procesor', '3', '1299', '7', blob);
