@@ -59,6 +59,26 @@ $repeatpassword = mysqli_real_escape_string($conn, $_POST["repeatpassword"]);
         <a href="loguj.php">Zaloguj się</a>
         <br><br><br>
         </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
+<footer>
+        <div id="orderSec">
+            <h3>Zamówienia</h3>
+            <a href="">Dostawa i płatności</a>
+        </div>
+        <div id="salesSec">
+            <h3>Promocje</h3>
+            <a href="">Wyprzedaż</a>
+        </div>
+        <div id="aboutSec">
+            <h3>y-kom</h3>
+            <a href="">O nas!</a>
+        </div>
+        <div id="contactSec">
+            <h3>Kontakt</h3>
+            <img src="img/phone.png"/><p> +48 123 456 789</p>
+        </div>
+    </footer>
     </main>
 </body>
 </html>

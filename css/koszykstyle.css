@@ -331,8 +331,10 @@ main {
 }
 
 #kat #kategoria_dropdown {
+  width: 100%;
   top: 20px;
-  padding: 5px;
+  padding: 0;
+  margin: 0;
   position: absolute;
   opacity: 0;
   pointer-events: none;
@@ -363,6 +365,8 @@ main {
   }
   a {
     color: var(--platinum);
+    display: block;
+    width: 100%;
   }
   a:hover {
     color: black;
