@@ -91,7 +91,7 @@
 
 
     $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
-    $s1 = "SELECT * FROM produkt WHERE id_kategoria=1 OR id_kategoria=2 AND ilosc_magazyn > 0 LIMIT 5";
+    $s1 = "SELECT * FROM produkt WHERE (id_kategoria=1 OR id_kategoria=2) AND ilosc_magazyn > 0 LIMIT 5";
     
     $q1 = mysqli_query($conn, $s1);
 

@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,39 +85,46 @@
 
     <div class="baner_main">
     </div>
-    <?php
-session_start();
-?>
 
-<div class="koszykSection">
-<div class="koszykItemsSection">
-    <h2>Twój koszyk</h2>
-<?php
-if (empty($_SESSION['koszyk'])) {
-    echo "Koszyk jest pusty";
-} else {
-    $suma = 0;
-    $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
+<div class="checkout-container">
 
-    foreach ($_SESSION['koszyk'] as $id => $produkt) {
-        $q = "SELECT * FROM produkt WHERE id=$id";
+    <!-- LEWA STRONA -->
+    <div class="checkout-form">
+        <h2>Dane zamówienia</h2>
 
-        $s = mysqli_query($conn, $q);
-        $f = mysqli_fetch_assoc($s);
-        echo $f['nazwa_prod'] . " - " . $f['cena_sztuka'] . " zł x " . $produkt['ilosc'];
+        <form method="POST" action="zloz_zamowienie.php">
+            <input type="text" name="imie" placeholder="Imię">
+            <input type="text" name="nazwisko" placeholder="Nazwisko">
+            <input type="text" name="ulica" placeholder="Ulica">
+            <input type="text" name="nr_dom" placeholder="Nr domu">
+            <input type="text" name="miasto" placeholder="Miasto">
+            <input type="text" name="kod" placeholder="Kod pocztowy">
+            <input type="text" name="tel" placeholder="Telefon">
+            <input type="email" name="email" placeholder="Email">
 
-        echo " <a href='usun.php?id=$id'>Usuń</a>";
-        echo "</p>";
+            <button type="submit">Złóż zamówienie</button>
+        </form>
+    </div>
 
-        $suma += $f['cena_sztuka'] * $produkt['ilosc'];
+    <!-- PRAWA STRONA -->
+    <div class="checkout-summary">
+        <h2>Twoje zamówienie</h2>
+
+        <?php
+        $suma = 0;
+
+    if (!empty($_SESSION['koszyk'])) {
+        foreach ($_SESSION['koszyk'] as $produkt) {
+            echo $produkt['nazwa_prod'];
+        }
+    } else {
+        echo "Koszyk jest pusty";
     }
-}
-?>
-</div>
-<div class="koszykPodsumowanieDiv">
-    <h3>Suma: <?php echo $suma?> zł</h3>
-    <button id="checkoutButton" onclick="window.location.href='zamowienie.php';">Złóż zamówienie</button>
-</div>
+
+        echo "<h3>Suma: $suma zł</h3>";
+        ?>
+    </div>
+
 </div>
 </main>
 
