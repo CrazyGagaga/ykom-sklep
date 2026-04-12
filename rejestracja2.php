@@ -58,6 +58,8 @@
         }
         else {
         echo "<h3>Zarejestrowano pomyslnie!</h3><br><br>";
+        $_SESSION['imie_ses'] = $imie;
+        $_SESSION['nazwisko_ses'] = $nazwisko;
         echo '<a href="loguj.php" id="rejestracjaa">Zaloguj sie</a><br><br>';
         }
         ?>

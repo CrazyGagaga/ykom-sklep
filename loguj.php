@@ -1,6 +1,9 @@
 <?php 
     $email = "";
     $password = "";
+    session_cache_expire();
+    session_start();
+    
 
 ?>
 <!DOCTYPE html>
@@ -29,16 +32,31 @@
             <button type="submit" id="logowaniebutton">Zaloguj</button>
         </form><br>
         <?php
+
+        if(isset($_SESSION['imie_ses'])) {
+                echo "Zostałes juz zalogowany";
+            } 
+
+            else {
+                
+
+            
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
     
             $email = $_POST['email'];
             $password = $_POST['password'];
 
+            
+
             $q1 = 'SELECT dane_uzyt_zam.email, dane_uzyt_zam.haslo FROM dane_uzyt_zam WHERE email LIKE "' . $email . '"';
             $r1 = mysqli_query($conn, $q1);
             $row = mysqli_fetch_array($r1);
 
+            
+            
+
+            
 
             if(isset($row)) {
                 if ($row[0] == "") {
@@ -49,11 +67,29 @@
                 }
                 else {
                     echo "Zalogowano pomyslnie!";
+                    $q2 = "SELECT * FROM dane_uzyt_zam";
+                    $r2 = mysqli_query($conn, $q2);
+                    $i = mysqli_fetch_array($r2);
+                    
+                    $_SESSION['imie_ses'] = $i[1];
+                    $_SESSION['nazwisko_ses'] = $i[2];
+                    $_SESSION['nr_dom_ses'] = $i[3];
+                    $_SESSION['ulica_ses'] = $i[4];
+                    $_SESSION['miejscowosc_ses'] = $i[5];
+                    $_SESSION['kod_pocztowy_ses'] = $i[6];
+                    $_SESSION['nr_tel_ses'] = $i[7];
+                    $_SESSION['mail_ses'] = $i[8];
+                    
+                    
+
                 }
             } else {
                 echo "Nie znaleziono takiego adresu email";
             }
-        }
+        }}
+
+        
+        
         
         ?>
         <p>Masz problemy z logowaniem?</p>

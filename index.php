@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -88,6 +90,9 @@
     <br>
     <div id="products">
     <?php
+
+    print_r($_SESSION['imie_ses']);
+   
 
 
     $conn = mysqli_connect("localhost", "root", "", "ykom_baza");

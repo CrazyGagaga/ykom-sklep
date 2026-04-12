@@ -92,15 +92,39 @@
     <div class="checkout-form">
         <h2>Dane zamówienia</h2>
 
+ 
+
         <form method="POST" action="zloz_zamowienie.php">
-            <input type="text" name="imie" placeholder="Imię">
+
+        <?php
+
+        if (isset($_SESSION['imie_ses'])) {
+
+        echo '<input type="text" name="imie" placeholder="Imię" value="' . $_SESSION['imie_ses'] . '">
+            <input type="text" name="nazwisko" placeholder="Nazwisko" value="' . $_SESSION['nazwisko_ses'] . '">
+            <input type="text" name="ulica" placeholder="Ulica" value="' . $_SESSION['ulica_ses'] . '">
+            <input type="text" name="nr_dom" placeholder="Nr domu" value="' . $_SESSION['nr_dom_ses'] . '">
+            <input type="text" name="miasto" placeholder="Miasto" value="' . $_SESSION['miejscowosc_ses'] . '">
+            <input type="text" name="kod" placeholder="Kod pocztowy" value="' . $_SESSION['kod_pocztowy_ses'] . '">
+            <input type="text" name="tel" placeholder="Telefon" value="' . $_SESSION['nr_tel_ses'] . '">
+            <input type="email" name="email" placeholder="Email" value="' . $_SESSION['mail_ses'] . '">';
+
+        }
+
+        else {
+            echo '<input type="text" name="imie" placeholder="Imię">
             <input type="text" name="nazwisko" placeholder="Nazwisko">
             <input type="text" name="ulica" placeholder="Ulica">
             <input type="text" name="nr_dom" placeholder="Nr domu">
             <input type="text" name="miasto" placeholder="Miasto">
             <input type="text" name="kod" placeholder="Kod pocztowy">
             <input type="text" name="tel" placeholder="Telefon">
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email">';
+
+        }
+
+?>
+            
 
             <button type="submit">Złóż zamówienie</button>
         </form>
@@ -111,7 +135,10 @@
         <h2>Twoje zamówienie</h2>
 
         <?php
+        
+        
         $suma = 0;
+        $imie = $_SESSION['imie_ses'];
 
     if (!empty($_SESSION['koszyk'])) {
         foreach ($_SESSION['koszyk'] as $produkt) {
@@ -119,9 +146,11 @@
         }
     } else {
         echo "Koszyk jest pusty";
+       
     }
-
+        print_r($imie);
         echo "<h3>Suma: $suma zł</h3>";
+        
         ?>
     </div>
 

@@ -32,6 +32,7 @@
         error_reporting(E_ALL ^ E_WARNING);
 
         $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
+        print_r($_SESSION['nazwisko_ses']);
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $FormWypelniony = false;
             $login = mysqli_real_escape_string($conn, $_POST["login"]);
