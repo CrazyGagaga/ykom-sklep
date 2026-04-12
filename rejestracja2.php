@@ -11,6 +11,7 @@
         <a href="index.php"><h1>Y-KOM - Twoj sklep komputerowy!</h1></a>
     </header>
     <main>
+        <div class="rejestracjacard">
         <div class="rejestracjamain">
             <h2>Zarejestruj się!</h2><br>
         <form method="POST" action="rejestracja2.php">
@@ -34,6 +35,7 @@
 
         <?php 
         session_start();
+        error_reporting(E_ALL ^ E_WARNING);
         $conn = mysqli_connect("localhost", "root", "", "ykom_baza");
 
         $id_uz = $_SESSION['id_uz'];
@@ -59,6 +61,7 @@
         echo '<a href="loguj.php" id="rejestracjaa">Zaloguj sie</a><br><br>';
         }
         ?>
+        </div>
         </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
     </main>

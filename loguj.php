@@ -18,12 +18,13 @@
 
 
     <main>
+        <div class="logowaniecard">
         <div class="logowaniemain">
             <h2>Zaloguj się!</h2><br>
         <form method="POST" action="loguj.php">
-            <label>Email: </label><br>
+           <img src="img/icons8-email-52.png" alt="email icon">
             <input type="text" name="email"><br><br>
-            <label>Hasło: </label><br>
+            <img src="img/icons8-password-50.png" alt="password icon" width="52px">
             <input type="password" name="password"><br><br>
             <button type="submit" id="logowaniebutton">Zaloguj</button>
         </form><br>
@@ -62,8 +63,9 @@
         </p>
         <a href="rejestracja.php">Załóż konto</a>
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+        <br><br><br><br><br><br><br><br>
     </main>
            
 <footer>
