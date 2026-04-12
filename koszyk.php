@@ -84,6 +84,7 @@
     </div>
     <?php
 session_start();
+error_reporting(E_ALL ^ E_WARNING);
 ?>
 
 <div class="koszykSection">
@@ -91,6 +92,7 @@ session_start();
     <h2>Twój koszyk</h2>
 <?php
 if (empty($_SESSION['koszyk'])) {
+    $suma= 0;
     echo "Koszyk jest pusty";
 } else {
     $suma = 0;
