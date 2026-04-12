@@ -90,8 +90,6 @@ session_start();
     <br>
     <div id="products">
     <?php
-
-    print_r($_SESSION['imie_ses']);
    
 
 

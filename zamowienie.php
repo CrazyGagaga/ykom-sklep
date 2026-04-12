@@ -138,7 +138,7 @@
         
         
         $suma = 0;
-        $imie = $_SESSION['imie_ses'];
+        
 
     if (!empty($_SESSION['koszyk'])) {
         foreach ($_SESSION['koszyk'] as $produkt) {
@@ -148,7 +148,7 @@
         echo "Koszyk jest pusty";
        
     }
-        print_r($imie);
+        
         echo "<h3>Suma: $suma zł</h3>";
         
         ?>

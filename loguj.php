@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="css\logujstyle.css">
 </head>
 <body>
+    <script>
+        function wyloguj() {
+            document.location="wylogowanie.php";
+        }
+    </script>
     <header>
         <a href="index.php"><h1>Y-KOM - Twoj sklep komputerowy!</h1></a>
     </header>
@@ -23,21 +28,25 @@
     <main>
         <div class="logowaniecard">
         <div class="logowaniemain">
-            <h2>Zaloguj się!</h2><br>
+            
+        <?php
+
+        if(isset($_SESSION['imie_ses'])) {
+                
+                echo "<h2>Jesteś już zalogowany!</h2><br>
+                <button id='wylogujbutton' onclick='wyloguj()'>Wyloguj się!</button>";
+            } 
+
+            else {
+
+            echo '<h2>Zaloguj się!</h2><br>
         <form method="POST" action="loguj.php">
            <img src="img/icons8-email-52.png" alt="email icon">
             <input type="text" name="email"><br><br>
             <img src="img/icons8-password-50.png" alt="password icon" width="52px">
             <input type="password" name="password"><br><br>
             <button type="submit" id="logowaniebutton">Zaloguj</button>
-        </form><br>
-        <?php
-
-        if(isset($_SESSION['imie_ses'])) {
-                echo "Zostałes juz zalogowany";
-            } 
-
-            else {
+        </form><br>';
                 
 
             
@@ -86,12 +95,9 @@
             } else {
                 echo "Nie znaleziono takiego adresu email";
             }
-        }}
-
+        }
         
-        
-        
-        ?>
+        echo '
         <p>Masz problemy z logowaniem?</p>
         <a href="">Zresetuj hasło</a>
         <br><br>
@@ -99,9 +105,15 @@
         </p>
         <a href="rejestracja.php">Załóż konto</a>
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+        }
+
+    
+        ?>
+
         </div>
         <br><br><br><br><br><br><br><br>
+        
     </main>
            
 <footer>
