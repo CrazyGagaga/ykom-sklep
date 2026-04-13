@@ -98,6 +98,8 @@
 
         <?php
 
+        error_reporting(E_ALL ^ E_WARNING);
+
         if (isset($_SESSION['imie_ses'])) {
 
         echo '<input type="text" name="imie" placeholder="Imię" value="' . $_SESSION['imie_ses'] . '">
